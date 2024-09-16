@@ -16,7 +16,7 @@ public class AmazonSearch {
 
         // Set up Chrome options
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless"); // Optional: Run in headless mode
+        //options.addArguments("--headless"); (remove // : to Run in headless mode)
 
         WebDriver driver = new ChromeDriver(options);
 
