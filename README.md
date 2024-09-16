@@ -1,5 +1,5 @@
 This java code has been written in Eclipse for selenium 
-IN THE CODE USER HAVE TO CONFIGURE SETTINGS : 
+
 
 **Instructions for Running the Script:
 Download ChromeDriver: Make sure you have the ChromeDriver executable that matches your version of Chrome. You can download it from the ChromeDriver site.
