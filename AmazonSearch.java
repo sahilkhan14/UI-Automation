@@ -12,17 +12,22 @@ import java.util.Map;
 public class AmazonSearch {
     public static void main(String[] args) {
         // Set path to your ChromeDriver
-    	System.setProperty("webdriver.chrome.driver", "D:\\selenium + java\\all webdriver in it\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
 
         // Set up Chrome options
         ChromeOptions options = new ChromeOptions();
-       // options.addArguments("--headless"); // Run in headless mode (optional)
+        options.addArguments("--headless"); // Optional: Run in headless mode
 
         WebDriver driver = new ChromeDriver(options);
 
         try {
-            // Open Amazon.in search results page
-            driver.get("https://www.amazon.in/s?k=LG+sound+bar&crid=3USX54AEZOE9A&sprefix=lg+sound+bar%2Caps%2C240&ref=nb_sb_noss_2");
+            // 1. Open amazon.in
+            driver.get("https://www.amazon.in");
+
+            // 2. Search for 'lg soundbar'
+            WebElement searchBox = driver.findElement(By.id("twotabsearchtextbox"));
+            searchBox.sendKeys("LG soundbar");
+            searchBox.submit();
 
             // Wait for results to load
             Thread.sleep(5000); // Increase wait time if necessary
@@ -30,7 +35,7 @@ public class AmazonSearch {
             // Initialize data storage
             Map<String, Double> products = new HashMap<>();
 
-            // Locate product elements
+            // 3. Read product names and associated main price on 1st search result page
             List<WebElement> productElements = driver.findElements(By.cssSelector(".s-main-slot .s-result-item"));
 
             for (WebElement item : productElements) {
@@ -63,18 +68,18 @@ public class AmazonSearch {
                 }
             }
 
-            // Sort products by price
+            // 4. Sort products by price
             List<Map.Entry<String, Double>> sortedProducts = new ArrayList<>(products.entrySet());
             sortedProducts.sort(Map.Entry.comparingByValue());
 
-            // Print products
+            // 5. Print sorted products
             for (Map.Entry<String, Double> entry : sortedProducts) {
                 System.out.println(entry.getValue() + " " + entry.getKey());
             }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            // Close WebDriver
+            // 6. Close WebDriver
             driver.quit();
         }
     }
