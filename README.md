@@ -22,7 +22,7 @@ java AmazonSearch
 Key Points:
 CSS Selectors: The CSS selectors used (h2 .a-text-normal for product titles and .a-price .a-offscreen for prices) are based on the structure of the Amazon search results page. They might need to be adjusted if Amazon updates their page structure.
 Error Handling: Includes basic error handling to catch issues with missing elements or price parsing errors.
-Headless Mode: The script runs in headless mode by default, which is useful for running the script without opening a browser window. Remove options.addArguments("--headless") if you want to see the browser window.
+Headless Mode: The script runs in headless mode, which is useful for running the script without opening a browser window. Remove options.addArguments("--headless") if you want to see the browser window.
 **
            
 
