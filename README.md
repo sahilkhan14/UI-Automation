@@ -1,8 +1,8 @@
-Amazon Product Price Scraper
+**Amazon Product Price Scraper**
 This Java code uses Selenium WebDriver to scrape product names and prices from Amazon's search results page.
 
-Prerequisites
-ChromeDriver: Download the ChromeDriver executable that matches your version of Chrome from the ChromeDriver site.
+**Prerequisites**
+ChromeDriver:  Download the ChromeDriver executable that matches your version of Chrome from the ChromeDriver site. Update the path in your code accordingly.
 
 Java: Ensure Java is installed on your machine. Verify that javac and java commands are available in your PATH.
 
@@ -16,10 +16,9 @@ Instructions for Running the Script
 Save the Script: Save the provided Java code into a file named AmazonSearch.java.
 
 Compile the Script: Open a terminal or command prompt and navigate to the directory containing AmazonSearch.java. Compile the script with:
-javac AmazonSearch.java
-
+**javac AmazonSearch.java**
 Run the Script: Execute the compiled Java file with:
-java AmazonSearch
+**java AmazonSearch**
 
 Key Points
 CSS Selectors: The script uses specific CSS selectors (h2 .a-text-normal for product titles and .a-price .a-offscreen for prices) based on the Amazon search results page structure. These selectors may need updating if Amazon changes its page layout.
@@ -30,4 +29,4 @@ Headless Mode:By default, the script runs with a visible browser window. To run 
 options.addArguments("--headless");
 
 Description
-This script automates the extraction of LG soundbar products and their prices from Amazon's search results. If a product’s price is not available, it is considered as zero.
+**This script automates the extraction of LG soundbar products and their prices from Amazon's search results. If a product’s price is not available, it is considered as zero.**
