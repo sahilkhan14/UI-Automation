@@ -1,30 +1,33 @@
-This java code has been written in Eclipse for selenium 
+Amazon Product Price Scraper
+This Java code uses Selenium WebDriver to scrape product names and prices from Amazon's search results page.
 
+Prerequisites
+ChromeDriver: Download the ChromeDriver executable that matches your version of Chrome from the ChromeDriver site.
 
-**Instructions for Running the Script:
-Download ChromeDriver: Make sure you have the ChromeDriver executable that matches your version of Chrome. You can download it from the ChromeDriver site.
+Java: Ensure Java is installed on your machine. Verify that javac and java commands are available in your PATH.
 
-Set Up Your Environment:
+Selenium: Add Selenium dependencies to your project:
 
-Install Java: Ensure that Java is installed on your machine and that javac and java commands are available in your PATH.
-Add Selenium Dependencies: If using Maven or Gradle, include Selenium dependencies. For a standalone setup, download the Selenium Java bindings from the Selenium website.
-Compile and Run the Script:
+Maven: Add the Selenium dependency to your pom.xml.
+Gradle: Add the Selenium dependency to your build.gradle.
+Standalone: Download Selenium Java bindings from the Selenium website.
 
-Save the Script: Save the Java code into a file named AmazonSearch.java.
-Compile: Open a terminal or command prompt and run:
-sh
-Copy code
+Instructions for Running the Script
+Save the Script: Save the provided Java code into a file named AmazonSearch.java.
+
+Compile the Script: Open a terminal or command prompt and navigate to the directory containing AmazonSearch.java. Compile the script with:
 javac AmazonSearch.java
-Run: Execute the compiled Java file:
-sh
-Copy code
-java AmazonSearch
-Key Points:
-CSS Selectors: The CSS selectors used (h2 .a-text-normal for product titles and .a-price .a-offscreen for prices) are based on the structure of the Amazon search results page. They might need to be adjusted if Amazon updates their page structure.
-Error Handling: Includes basic error handling to catch issues with missing elements or price parsing errors.
-Headless Mode: The script can be runs in headless mode, which is useful for running the script without opening a browser window. uncomment(remove //) options.addArguments("--headless") if you don't want to see the browser window.
-**
-           
 
-This is the automation script for listing product with prices : LG soundbar 
-if there is no price then it will show the product in zero price
+Run the Script: Execute the compiled Java file with:
+java AmazonSearch
+
+Key Points
+CSS Selectors: The script uses specific CSS selectors (h2 .a-text-normal for product titles and .a-price .a-offscreen for prices) based on the Amazon search results page structure. These selectors may need updating if Amazon changes its page layout.
+
+Error Handling: Basic error handling is included to manage issues such as missing elements or errors in price parsing.
+
+Headless Mode:By default, the script runs with a visible browser window. To run the script in headless mode (without opening a browser window), add or uncomment the following line in the code:
+options.addArguments("--headless");
+
+Description
+This script automates the extraction of LG soundbar products and their prices from Amazon's search results. If a product’s price is not available, it is considered as zero.
